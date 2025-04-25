@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Truth or Dare Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="game.js"> </script>
+</head>
+<body>
+    <!-- Welcome Screen -->
+  <div class="game-container" id="welcomeScreen">
+    <h1>Welcome to Truth or Dare</h1>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <!-- Game Setup Screen -->
+  <div class="game-container" id="gameScreen" style="display:none;">
+    <h1>Choose Game Mode</h1>
+    <label for="modeSelect">Choose Game Mode:</label>
+    <select id="modeSelect" onchange="updatePlayerOptions()">
+      <option value="computer" selected>Play with Computer</option>
+      <option value="friends">Play with Friends</option>
+    </select>
+
+    <div id="playerSelection" style="display:none;">
+      <label for="numPlayers">Select Number of Players:</label>
+      <select id="numPlayers" onchange="showPlayerInputs()">
+        <option value="2">2 Players</option>
+        <option value="3">3 Players</option>
+        <option value="4">4 Players</option>
+      </select>
+
+      <div id="playerNames"></div>
+      <div id="wheelMessage" style="margin-top: 1rem; font-weight: bold;">Spinning wheel will determine who starts first!</div>
+      <div id="startGameBtnContainer">
+        <button onclick="startSelectedGame()">Start Game</button>
+      </div>
+    </div>
+
+    <div id="playerNameInputComputer" style="display:none;">
+      <label>Enter Your Name:</label>
+      <input type="text" id="customPlayerName" placeholder="Your name (optional)" />
+    </div>
+
+    <div id="startGameBtnContainerComputer">
+      <button onclick="startSelectedGame()">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Gameplay Actions -->
+  <div class="game-container" id="gameActions" style="display:none;">
+    <div class="spinner" id="spinnerText" style="display:none;"></div>
+    <button onclick="ask('truth')">Truth</button>
+    <button onclick="ask('dare')">Dare</button>
+
+    <div class="question-box" id="questionBox"></div>
+    <div class="reply-section" id="replySection">
+      <input type="text" id="replyInput" placeholder="Type your answer here..." />
+      <button onclick="submitReply()">Submit Answer</button>
+    </div>
+
+    <div class="scoreboard" id="scoreboard"></div>
+    <div class="round-info" id="roundInfo"></div>
+
+    <div id="nextRoundBtnContainer" style="display:none;">
+      <button onclick="nextRound()">Next Round</button>
+    </div>
+
+    <div id="restartGameBtnContainer" style="display:none;">
+      <button onclick="restartGame()">Restart the Game</button>
+    </div>
+  </div>
+
+  <footer>Developed by Alice</footer>
+  <script src="game.js"></script>
+</body>
+</html>

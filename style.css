@@ -1,0 +1,103 @@
+ * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .game-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      margin: 2rem auto;
+    }
+
+    select, button, input {
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: 1px solid #bbb;
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+    }
+
+    button {
+      background-color: #6c63ff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #574fd6;
+    }
+
+    .question-box {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      color: #333;
+      min-height: 60px;
+    }
+
+    .scoreboard {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      color: #444;
+      text-align: center;
+    }
+
+    .round-info {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      color: #444;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .spinner {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #333;
+      animation: spinText 2s ease-in-out;
+    }
+
+    @keyframes spinText {
+      0% { transform: rotateX(0deg); opacity: 0; }
+      100% { transform: rotateX(360deg); opacity: 1; }
+    }
+
+    .reply-section {
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .game-container {
+        padding: 1.5rem 1rem;
+      }
+    }
